@@ -1,0 +1,6 @@
+[submodule "themes/svbtle"]
+	path = themes/svbtle
+	url = https://github.com/VerosK/pelican-svbtle
+[submodule "themes/blue-penguin"]
+	path = themes/blue-penguin
+	url = git@github.com:VerosK/blue-penguin.git
