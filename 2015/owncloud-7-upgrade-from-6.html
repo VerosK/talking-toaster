@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+	<link rel="stylesheet" type="text/css" href="http://talking.toaster.cz/theme/css/style.css">
+	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
+	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
+	<link rel="stylesheet" type="text/css" href="http://talking.toaster.cz/theme/css/pygments.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+
+	<link href="http://talking.toaster.cz/" type="application/atom+xml" rel="alternate" title="Talking Toaster ATOM Feed" />
+
+
+		<title>Talking Toaster</title>
+		<meta charset="utf-8" />
+</head>
+<body>
+	<section id="sidebar">
+		<figure id="user_logo">
+            <a href="http://talking.toaster.cz"><div class="logo">&nbsp;</div></a>
+		</figure>
+
+		<div class="user_meta">
+            <h1 id="user"><a href="http://talking.toaster.cz" class="">Věroš Kaplan</a></h1>
+			<h2></h2>
+			<ul>
+			</ul>
+		</div>
+		<footer>
+			<address>
+				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
+		                theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
+			</address>
+		</footer>
+	</section>
+
+	<section id="posts">
+	<header>
+		<h1>Věroš Kaplan's blog</h1>
+		<h3>Posted Thu 15 January 2015</h3>
+	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://talking.toaster.cz/2015/owncloud-7-upgrade-from-6.html" rel="bookmark"
+				title="Permalink to Owncloud 7 - upgrade from 6">Owncloud 7 - upgrade from 6</a>
+		</h1>
+		<p><a href="http://www.owncloud.com/seven/">OwnCloud 7</a> is here for more than three months (<a href="https://owncloud.org/releases/Changelog">changelog</a>). How to upgrade from
+OwnCloud 6?</p>
+<p>The good news: it's easy.</p>
+<ul>
+<li>Make backups</li>
+<li><a href="https://owncloud.org/install/#instructions-server">Download</a> .tar.gz package and extract it</li>
+<li>Copy <code>owncloud6/config/config.php</code> to <code>owncloud7/config/config.pjp</code></li>
+<li>Run migration tasks by: <code>sudo -u apache php occ upgrade</code></li>
+</ul>
+
+		<div id="article_meta">
+				Category:
+					<a href="http://talking.toaster.cz/category/external-memory.html">External memory</a>
+				<br />Tags:
+					<a href="http://talking.toaster.cz/tag/owncloud.html">owncloud</a>
+		</div>
+	</article>
+
+	<footer>
+		<a href="http://talking.toaster.cz/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+
+	</section>
+
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-58721665-1");
+			pageTracker._trackPageview();
+		} catch(err) {}</script>
+</body>
+</html>

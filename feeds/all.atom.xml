@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Talking Toaster</title><link href="http://talking.toaster.cz/" rel="alternate"></link><link href="http://talking.toaster.cz/feeds/all.atom.xml" rel="self"></link><id>http://talking.toaster.cz/</id><updated>2015-01-18T22:00:00+01:00</updated><entry><title>Owncloud 7 - custom mail messages</title><link href="http://talking.toaster.cz/2015/owncloud-share-by-mail.html" rel="alternate"></link><updated>2015-01-18T22:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-01-17:2015/owncloud-share-by-mail.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.owncloud.com/"&gt;OwnCloud 7&lt;/a&gt; came packed with lots of new features. Many happy users of
+OwnCloud uses it as file transfer solution (me including).&lt;/p&gt;
+&lt;p&gt;The default mail message sent to the user receiving the file is a bit unformal
+and is considered unpolite. It starts &lt;em&gt;Hey there&lt;/em&gt;. How to change the message? &lt;/p&gt;
+&lt;p&gt;The good news is file is stored in  &lt;code&gt;core/templates/mail.php&lt;/code&gt; (HTML version) 
+and &lt;code&gt;core/templates/altmail.php&lt;/code&gt; (plain text version). 
+mc
+If you change that templates, the messages can be a bit more polite.&lt;/p&gt;</summary><category term="owncloud"></category></entry><entry><title>Owncloud 7 - upgrade from 6</title><link href="http://talking.toaster.cz/2015/owncloud-7-upgrade-from-6.html" rel="alternate"></link><updated>2015-01-15T22:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-01-15:2015/owncloud-7-upgrade-from-6.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.owncloud.com/seven/"&gt;OwnCloud 7&lt;/a&gt; is here for more than three months (&lt;a href="https://owncloud.org/releases/Changelog"&gt;changelog&lt;/a&gt;). How to upgrade from
+OwnCloud 6?&lt;/p&gt;
+&lt;p&gt;The good news: it's easy.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make backups&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://owncloud.org/install/#instructions-server"&gt;Download&lt;/a&gt; .tar.gz package and extract it&lt;/li&gt;
+&lt;li&gt;Copy &lt;code&gt;owncloud6/config/config.php&lt;/code&gt; to &lt;code&gt;owncloud7/config/config.pjp&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run migration tasks by: &lt;code&gt;sudo -u apache php occ upgrade&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="owncloud"></category></entry></feed>
