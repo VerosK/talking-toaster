@@ -10,7 +10,7 @@
 	<link href="http://talking.toaster.cz/" type="application/atom+xml" rel="alternate" title="Talking Toaster ATOM Feed" />
 
 
-		<title>Talking Toaster - Articles by Věroš Kaplan</title>
+		<title>Talking Toaster</title>
 		<meta charset="utf-8" />
 </head>
 <body>
@@ -36,39 +36,38 @@
 	<section id="posts">
 	<header>
 		<h1>Věroš Kaplan's blog</h1>
-		<h3>
-			<script type="text/javascript">
-				var currentDate = new Date();
-				var day = currentDate.getDate();
-				var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-				var month = monthNames[currentDate.getMonth()].toUpperCase();
-				var year = currentDate.getFullYear();
-				document.write(month + " " + day + ", " + year);
-			</script>
-		</h3>
+		<h3>Posted Mon 19 January 2015</h3>
 	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://talking.toaster.cz/drafts/apache-authenticate-to-active-directory.html" rel="bookmark"
+				title="Permalink to Apache authenticate to Active Directory">Apache authenticate to Active Directory</a>
+		</h1>
+		<p>ldap_follow</p>
+<p><a href="http://www.owncloud.com/seven/">OwnCloud 7</a> is here for more than three months (<a href="https://owncloud.org/releases/Changelog">changelog</a>). How to upgrade from
+OwnCloud 6?</p>
+<p>The good news: it's easy.</p>
+<ul>
+<li>Make backups</li>
+<li><a href="https://owncloud.org/install/#instructions-server">Download</a> .tar.gz package and extract it</li>
+<li>Copy <code>owncloud6/config/config.php</code> to <code>owncloud7/config/config.pjp</code></li>
+<li>Run migration tasks by: <code>sudo -u apache php occ upgrade</code>l</li>
+</ul>
 
-	<dl>
-		<ol>
-				<li>
-					<h1 class="title">
-						<a href="http://talking.toaster.cz/2015/owncloud-share-by-mail.html" rel="bookmark" title="Permalink to Owncloud 7 - customize mail messages">Owncloud 7 - customize mail messages</a>
-					</h1>
-					<abbr class="published" title="2015-01-17T00:00:00+01:00">Sat 17 January 2015</abbr>
-				<div class="entry-content"> <p>How to change mail message sent by OwnCloud sharing</p> </div>
-				</li>
-				<li>
-					<h1 class="title">
-						<a href="http://talking.toaster.cz/2015/owncloud-7-upgrade-from-6.html" rel="bookmark" title="Permalink to Owncloud 7 - upgrade from 6">Owncloud 7 - upgrade from 6</a>
-					</h1>
-					<abbr class="published" title="2015-01-15T00:00:00+01:00">Thu 15 January 2015</abbr>
-				<div class="entry-content"> <p>Quick upgrade from OwnCloud 6 to OwnCloud 7</p> </div>
-				</li>
-		</ol>
-	</dl>
+		<div id="article_meta">
+				Category:
+					<a href="http://talking.toaster.cz/category/external-memory.html">External memory</a>
+				<br />Tags:
+					<a href="http://talking.toaster.cz/tag/apache.html">apache</a>
+					<a href="http://talking.toaster.cz/tag/ldap.html">ldap</a>
+		</div>
+	</article>
 
-<p class="paginator">
-</p>
+	<footer>
+		<a href="http://talking.toaster.cz/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+
 	</section>
 
 <script type="text/javascript">
