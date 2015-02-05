@@ -34,16 +34,48 @@
 	</section>
 
 	<section id="posts">
-<h1>Archives for Talking Toaster</h1>
+	<header>
+		<h1>Věroš Kaplan's blog</h1>
+		<h3>Posted Wed 04 February 2015</h3>
+	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://talking.toaster.cz/2015/migrate-redmine-internal-users-to-ldap.html" rel="bookmark"
+				title="Permalink to Migrate Redmine internal users to LDAP">Migrate Redmine internal users to LDAP</a>
+		</h1>
+		<p><a href="http://www.redmine.org/">Redmine</a> can authenticate it's users to multiple backends. </p>
+<p>What if you need to change you internal users to LDAP ones?  </p>
+<ul>
+<li>Create new <em>LDAP backend</em> in Administration ( It's in http://my.redmine.org/auth_sources )<ul>
+<li>Add new `Auth source<em> and </em>Test* it. It should return no users, it's OK.</li>
+</ul>
+</li>
+<li>Change one or two users to authenticate to new LDAP auth source. (I'ts in https://my.redmine.org/users/1/edit ) </li>
+<li>Check that these users can login</li>
+<li>Change all other users. <ul>
+<li>You can eventually use <code>UPDATE users SET auth_source_id = NEW_ID WHERE auth_source_id = OLD_ID</code></li>
+</ul>
+</li>
+<li>Enjoy.</li>
+</ul>
+<h2>How to make backups of auth setup</h2>
+<p><code>mysqldump  redmine_database users --replace --extended-insert=FALSE --no-create-info &gt; redmine_users.sql</code>
+```</p>
 
-<dl>
-    <dt>Wed 04 February 2015</dt>
-    <dd><a href="http://talking.toaster.cz/2015/migrate-redmine-internal-users-to-ldap.html">Migrate Redmine internal users to LDAP</a></dd>
-    <dt>Sat 17 January 2015</dt>
-    <dd><a href="http://talking.toaster.cz/2015/owncloud-share-by-mail.html">Owncloud 7 - customize mail messages</a></dd>
-    <dt>Thu 15 January 2015</dt>
-    <dd><a href="http://talking.toaster.cz/2015/owncloud-7-upgrade-from-6.html">Owncloud 7 - upgrade from 6</a></dd>
-</dl>
+		<div id="article_meta">
+				Category:
+					<a href="http://talking.toaster.cz/category/external-memory.html">External memory</a>
+				<br />Tags:
+					<a href="http://talking.toaster.cz/tag/redmine.html">redmine</a>
+					<a href="http://talking.toaster.cz/tag/ldap.html">ldap</a>
+		</div>
+	</article>
+
+	<footer>
+		<a href="http://talking.toaster.cz/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+
 	</section>
 
 <script type="text/javascript">
