@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Talking Toaster</title><link href="http://talking.toaster.cz/" rel="alternate"></link><link href="http://talking.toaster.cz/feeds/all.atom.xml" rel="self"></link><id>http://talking.toaster.cz/</id><updated>2015-02-04T00:00:00+01:00</updated><entry><title>Migrate Redmine internal users to LDAP</title><link href="http://talking.toaster.cz/2015/migrate-redmine-internal-users-to-ldap.html" rel="alternate"></link><updated>2015-02-04T00:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-02-04:2015/migrate-redmine-internal-users-to-ldap.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.redmine.org/"&gt;Redmine&lt;/a&gt; can authenticate it's users to multiple backends. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Talking Toaster</title><link href="http://talking.toaster.cz/" rel="alternate"></link><link href="http://talking.toaster.cz/feeds/all.atom.xml" rel="self"></link><id>http://talking.toaster.cz/</id><updated>2015-02-20T00:00:00+01:00</updated><entry><title>Instalace HP Data Protector DA na CentOS</title><link href="http://talking.toaster.cz/2015/hp-data-protector-centos.html" rel="alternate"></link><updated>2015-02-20T00:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-02-20:2015/hp-data-protector-centos.html</id><summary type="html">&lt;p&gt;Kdysi dávno jsem dokázal nainstalovat Disk Agent od HP Omniback na Linux, čímž jsem si 
+v jedné továrně získal nehynoucí obdiv místních IT techniků. Čas od času
+za tento hřích mládí musím zaplatit, protože mi volají lidé, že chtějí 
+CentOS zálohovat pomocí HP Data Protector a chtějí tam nainstalovat jeho Disk Agent.&lt;/p&gt;
+&lt;p&gt;Jak na to?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Sehnat médium HP Data protectoru. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data protector běží jako služba v inetd (a dokonce umí i xinetd). 
+  &lt;em&gt;Před&lt;/em&gt; instalací je  třeba nainstalovat inetd nebo xinetd.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;yum install xinetd -y
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data Protector chce mít pocit, že na portu 5555 nic neběží a ověřuje si to 
+   velmi humorným způsobem. Z &lt;code&gt;/etc/services&lt;/code&gt; smažeme řádek obsahující 5555&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;sed -i~ /5555/d  /etc/services
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nainstalovat RPM balíčky Data Protectoru. Pokud to při instalaci nenapíše, tak je to 
+    možná v pořádku. Pokud to napíše něco ošklivého, tak to v pořádku není.   &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;rpm -ihv OB2-CORE-A.06.11-1.x86_64.rpm
+rpm -ihv OB2-DA-A.06.11-1.x86_64.rpm
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Přidat podpora moderních&lt;/em&gt; (nebo obskurních) &lt;em&gt;filesystémů&lt;/em&gt;. Pokud je HP DP DA velmi starý (~2011),
+    tak nepodporuje například ext4. Pro jeho podporu je potřeba buď z HP sehnat patch
+    (a tedy mít produkt pod supportem), nebo ohackovat klienta.&lt;/p&gt;
+&lt;p&gt;Editovat skript /opt/omni/lbin/.util , najít řádek 351 a do řádku přidat &lt;strong&gt;-t ext4&lt;/strong&gt; 
+nejlépe hned za &lt;strong&gt;-t ext3&lt;/strong&gt; .&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;gpl/i386/linux&lt;span class="o"&gt;)&lt;/span&gt;
+     /bin/df -P -t psfs -t ext2 -t SFS -t ext -t minix -t xiafs -t vmfs -t reiserfs -t ext3 -t ext4 -t vfat -t vxfs -t xfs -t hsmfs -t gfs -t lustre_lite -t ocfs -t ocfs2 2&amp;gt;/dev/null &lt;span class="p"&gt;|&lt;/span&gt; sed &lt;span class="s1"&gt;&amp;#39;1d&amp;#39;&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; awk &lt;span class="s1"&gt;&amp;#39;{print $6}&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;DISCLAIMER:&lt;/strong&gt; Tohle jsou poznámky jak jsem něco udělal, abych na to nezapomněl.&lt;/p&gt;
+&lt;p&gt;Novým zákazníkům bych doporučil &lt;a href="http://www.bareos.org/"&gt;Bareos&lt;/a&gt; (který nasazuju). Pokud ale někdo má legacy
+system s HP dlouhé peníze, nedá se nic dělat...&lt;/p&gt;</summary><category term="hp-data-protector"></category></entry><entry><title>Migrate Redmine internal users to LDAP</title><link href="http://talking.toaster.cz/2015/migrate-redmine-internal-users-to-ldap.html" rel="alternate"></link><updated>2015-02-04T00:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-02-04:2015/migrate-redmine-internal-users-to-ldap.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.redmine.org/"&gt;Redmine&lt;/a&gt; can authenticate it's users to multiple backends. &lt;/p&gt;
 &lt;p&gt;What if you need to change you internal users to LDAP ones?  &lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Create new &lt;em&gt;LDAP backend&lt;/em&gt; in Administration ( It's in http://my.redmine.org/auth_sources )&lt;ul&gt;

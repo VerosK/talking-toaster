@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+	<link rel="stylesheet" type="text/css" href="http://talking.toaster.cz/theme/css/style.css">
+	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
+	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
+	<link rel="stylesheet" type="text/css" href="http://talking.toaster.cz/theme/css/pygments.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+
+	<link href="http://talking.toaster.cz/" type="application/atom+xml" rel="alternate" title="Talking Toaster ATOM Feed" />
+
+
+		<title>Talking Toaster</title>
+		<meta charset="utf-8" />
+</head>
+<body>
+	<section id="sidebar">
+		<figure id="user_logo">
+            <a href="http://talking.toaster.cz"><div class="logo">&nbsp;</div></a>
+		</figure>
+
+		<div class="user_meta">
+            <h1 id="user"><a href="http://talking.toaster.cz" class="">Věroš Kaplan</a></h1>
+			<h2></h2>
+			<ul>
+			</ul>
+		</div>
+		<footer>
+			<address>
+				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
+		                theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
+			</address>
+		</footer>
+	</section>
+
+	<section id="posts">
+	<header>
+		<h1>Věroš Kaplan's blog</h1>
+		<h3>Posted Fri 20 February 2015</h3>
+	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://talking.toaster.cz/2015/hp-data-protector-centos.html" rel="bookmark"
+				title="Permalink to Instalace HP Data Protector DA na CentOS">Instalace HP Data Protector DA na CentOS</a>
+		</h1>
+		<p>Kdysi dávno jsem dokázal nainstalovat Disk Agent od HP Omniback na Linux, čímž jsem si 
+v jedné továrně získal nehynoucí obdiv místních IT techniků. Čas od času
+za tento hřích mládí musím zaplatit, protože mi volají lidé, že chtějí 
+CentOS zálohovat pomocí HP Data Protector a chtějí tam nainstalovat jeho Disk Agent.</p>
+<p>Jak na to?</p>
+<ol>
+<li>
+<p>Sehnat médium HP Data protectoru. </p>
+</li>
+<li>
+<p>Data protector běží jako služba v inetd (a dokonce umí i xinetd). 
+  <em>Před</em> instalací je  třeba nainstalovat inetd nebo xinetd.</p>
+<div class="highlight"><pre>yum install xinetd -y
+</pre></div>
+
+
+</li>
+<li>
+<p>Data Protector chce mít pocit, že na portu 5555 nic neběží a ověřuje si to 
+   velmi humorným způsobem. Z <code>/etc/services</code> smažeme řádek obsahující 5555</p>
+<div class="highlight"><pre>sed -i~ /5555/d  /etc/services
+</pre></div>
+
+
+</li>
+<li>
+<p>Nainstalovat RPM balíčky Data Protectoru. Pokud to při instalaci nenapíše, tak je to 
+    možná v pořádku. Pokud to napíše něco ošklivého, tak to v pořádku není.   </p>
+<div class="highlight"><pre>rpm -ihv OB2-CORE-A.06.11-1.x86_64.rpm
+rpm -ihv OB2-DA-A.06.11-1.x86_64.rpm
+</pre></div>
+
+
+</li>
+<li>
+<p><em>Přidat podpora moderních</em> (nebo obskurních) <em>filesystémů</em>. Pokud je HP DP DA velmi starý (~2011),
+    tak nepodporuje například ext4. Pro jeho podporu je potřeba buď z HP sehnat patch
+    (a tedy mít produkt pod supportem), nebo ohackovat klienta.</p>
+<p>Editovat skript /opt/omni/lbin/.util , najít řádek 351 a do řádku přidat <strong>-t ext4</strong> 
+nejlépe hned za <strong>-t ext3</strong> .</p>
+<div class="highlight"><pre>gpl/i386/linux<span class="o">)</span>
+     /bin/df -P -t psfs -t ext2 -t SFS -t ext -t minix -t xiafs -t vmfs -t reiserfs -t ext3 -t ext4 -t vfat -t vxfs -t xfs -t hsmfs -t gfs -t lustre_lite -t ocfs -t ocfs2 2&gt;/dev/null <span class="p">|</span> sed <span class="s1">&#39;1d&#39;</span> <span class="p">|</span> awk <span class="s1">&#39;{print $6}&#39;</span>
+</pre></div>
+
+
+</li>
+</ol>
+<p><strong>DISCLAIMER:</strong> Tohle jsou poznámky jak jsem něco udělal, abych na to nezapomněl.</p>
+<p>Novým zákazníkům bych doporučil <a href="http://www.bareos.org/">Bareos</a> (který nasazuju). Pokud ale někdo má legacy
+system s HP dlouhé peníze, nedá se nic dělat...</p>
+
+		<div id="article_meta">
+				Category:
+					<a href="http://talking.toaster.cz/category/external-memory.html">External memory</a>
+				<br />Tags:
+					<a href="http://talking.toaster.cz/tag/hp-data-protector.html">hp-data-protector</a>
+		</div>
+	</article>
+
+	<footer>
+		<a href="http://talking.toaster.cz/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+
+	</section>
+
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-58721665-1");
+			pageTracker._trackPageview();
+		} catch(err) {}</script>
+</body>
+</html>
