@@ -1,9 +1,9 @@
-Title: Owncloud 7 - custom mail messages
+Title: Owncloud 7 - customize mail messages
 Modified: 2015-01-18 22:00
 Category: External memory
 Tags: owncloud
 Authors: Věroš Kaplan
-Summary: How to change mail message sent by OwnCloud sharing 
+Summary: How to change mail message sent by OwnCloud file sharing service
 Slug: owncloud-share-by-mail
 X-Status: testing
 
@@ -18,5 +18,14 @@ and `core/templates/altmail.php` (plain text version).
 mc
 If you change that templates, the messages can be a bit more polite.
 
-[owncloud]: http://www.owncloud.com/
+---
 
+This is default Czech message, starting with: *Hey there!*
+![Default message][default-message]
+
+This is customized message starting with *Good afternoon*
+![Custom message][custom-message]
+
+[owncloud]: http://www.owncloud.com/
+[default-message]: {filename}/images/owncloud-default-notification.png "Default Czech message"
+[custom-message]: {filename}/images/owncloud-custom-notification.png "Customized Czech message" 
