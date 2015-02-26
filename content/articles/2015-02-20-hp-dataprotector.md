@@ -3,7 +3,7 @@ X-Modified: 2015-01-18 22:00
 Category: External memory
 Tags: hp-data-protector
 Authors: Věroš Kaplan
-Summary: Step-by-step instalace nainstalovat HP Data Protector na CentOS 6.
+Summary: Step-by-step návod jak nainstalovat HP Data Protector na CentOS 6.
 Slug: hp-data-protector-centos
 Language: czech
 X-Status: testing
@@ -55,6 +55,6 @@ Jak na to?
 **DISCLAIMER:** Tohle jsou poznámky jak jsem něco udělal, abych na to nezapomněl.
  
 Novým zákazníkům bych doporučil [Bareos] (který nasazuju). Pokud ale někdo má legacy
-system s HP dlouhé peníze, nedá se nic dělat...
+system od HP za dlouhé peníze, nedá se nic dělat...
 
 [Bareos]: http://www.bareos.org/
