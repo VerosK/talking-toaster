@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+	<link rel="stylesheet" type="text/css" href="http://talking.toaster.cz/theme/css/style.css">
+	<!--<link rel="stylesheet/less" type="text/css" href="/theme/css/style.less">-->
+	<!--<script src="/theme/js/less.js" type="text/javascript"></script>-->
+	<link rel="stylesheet" type="text/css" href="http://talking.toaster.cz/theme/css/pygments.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400,300|Inconsolata' rel='stylesheet' type='text/css'>
+
+	<link href="http://talking.toaster.cz/" type="application/atom+xml" rel="alternate" title="Talking Toaster ATOM Feed" />
+
+
+		<title>Talking Toaster</title>
+		<meta charset="utf-8" />
+</head>
+<body>
+	<section id="sidebar">
+		<figure id="user_logo">
+            <a href="http://talking.toaster.cz"><div class="logo">&nbsp;</div></a>
+		</figure>
+
+		<div class="user_meta">
+            <h1 id="user"><a href="http://talking.toaster.cz" class="">Věroš Kaplan</a></h1>
+			<h2></h2>
+			<ul>
+			</ul>
+		</div>
+		<footer>
+			<address>
+				Powered by <a href="http://pelican.notmyidea.org/">Pelican</a>,
+		                theme by <a href="https://github.com/wting/pelican-svbtle">wting</a>.
+			</address>
+		</footer>
+	</section>
+
+	<section id="posts">
+	<header>
+		<h1>Věroš Kaplan's blog</h1>
+		<h3>Posted Tue 24 February 2015</h3>
+	</header>
+	<article>
+		<h1 id="title">
+			<a href="http://talking.toaster.cz/2015/pyinstaller-python-apps-on-windows-without-python.html" rel="bookmark"
+				title="Permalink to Python na Windows bez Pythonu?">Python na Windows bez Pythonu?</a>
+		</h1>
+		<p>Pro neziskovku (<a href="http://www.matata.cz/">mateřské centrum</a>) - jsem vyráběl malý program v Pythonu 
+v PySide GUI. Jenže neziskovka má počítače na Windows a můj vývojářský stroj 
+je na Linuxu. A nutit maminky instalovat do náhodného počítače Python 
+pro Windows včetně knihovně je ... <em>moc práce</em>.</p>
+<p>Naštěstí existuje workaround v podobě <a href="https://github.com/pyinstaller/pyinstaller/wiki">PyInstaller</a>. Do vývojářského
+počítače s Windows se nainstaluje Python, všechny potřebné balíčky a 
+<code>pyinstaller</code> z Pythonového programu udělá spustitelný .EXE soubor. 
+Ten .EXE soubor je pak možné (většinou) spouštět i na jiném počítači, kde Python není.</p>
+<p>Ve skutečnosti je v tom EXE souboru zabalený celý Python včetně závislostí, 
+při každém spuštění se to rozbalí do <code>%TEMPDIR%</code> a po skončení běhu se to zase maže. 
+Ale to jsou pro uživatele nepodstatné detaily. 
+<em>Uživatel dostane jeden .EXE soubor, který prostě spustí.</em></p>
+<p><strong>Návod na použití</strong> je na webu <a href="https://github.com/pyinstaller/pyinstaller/wiki">pyinstalleru</a>.</p>
+<p>Odzkoušeno na Windows 7, Python 2.7, PyInstaller 2.1.</p>
+<p>V případě potřeby je možné celý proces postavení automatizovat 
+pomocí Jenkinsu či jiného nástroje.</p>
+
+		<div id="article_meta">
+				Category:
+					<a href="http://talking.toaster.cz/category/external-memory.html">External memory</a>
+				<br />Tags:
+					<a href="http://talking.toaster.cz/tag/python.html">python</a>
+					<a href="http://talking.toaster.cz/tag/pyside.html">pyside</a>
+					<a href="http://talking.toaster.cz/tag/windows.html">windows</a>
+					<a href="http://talking.toaster.cz/tag/pyinstaller.html">pyinstaller</a>
+		</div>
+	</article>
+
+	<footer>
+		<a href="http://talking.toaster.cz/" class="button_accent">&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
+	</footer>
+
+
+	</section>
+
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-58721665-1");
+			pageTracker._trackPageview();
+		} catch(err) {}</script>
+</body>
+</html>

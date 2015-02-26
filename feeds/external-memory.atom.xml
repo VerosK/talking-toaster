@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Talking Toaster</title><link href="http://talking.toaster.cz/" rel="alternate"></link><link href="http://talking.toaster.cz/feeds/external-memory.atom.xml" rel="self"></link><id>http://talking.toaster.cz/</id><updated>2015-02-20T00:00:00+01:00</updated><entry><title>Instalace HP Data Protector DA na CentOS</title><link href="http://talking.toaster.cz/2015/hp-data-protector-centos.html" rel="alternate"></link><updated>2015-02-20T00:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-02-20:2015/hp-data-protector-centos.html</id><summary type="html">&lt;p&gt;Kdysi dávno jsem dokázal nainstalovat Disk Agent od HP Omniback na Linux, čímž jsem si 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Talking Toaster</title><link href="http://talking.toaster.cz/" rel="alternate"></link><link href="http://talking.toaster.cz/feeds/external-memory.atom.xml" rel="self"></link><id>http://talking.toaster.cz/</id><updated>2015-02-24T00:00:00+01:00</updated><entry><title>Python na Windows bez Pythonu?</title><link href="http://talking.toaster.cz/2015/pyinstaller-python-apps-on-windows-without-python.html" rel="alternate"></link><updated>2015-02-24T00:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-02-24:2015/pyinstaller-python-apps-on-windows-without-python.html</id><summary type="html">&lt;p&gt;Pro neziskovku (&lt;a href="http://www.matata.cz/"&gt;mateřské centrum&lt;/a&gt;) - jsem vyráběl malý program v Pythonu 
+v PySide GUI. Jenže neziskovka má počítače na Windows a můj vývojářský stroj 
+je na Linuxu. A nutit maminky instalovat do náhodného počítače Python 
+pro Windows včetně knihovně je ... &lt;em&gt;moc práce&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Naštěstí existuje workaround v podobě &lt;a href="https://github.com/pyinstaller/pyinstaller/wiki"&gt;PyInstaller&lt;/a&gt;. Do vývojářského
+počítače s Windows se nainstaluje Python, všechny potřebné balíčky a 
+&lt;code&gt;pyinstaller&lt;/code&gt; z Pythonového programu udělá spustitelný .EXE soubor. 
+Ten .EXE soubor je pak možné (většinou) spouštět i na jiném počítači, kde Python není.&lt;/p&gt;
+&lt;p&gt;Ve skutečnosti je v tom EXE souboru zabalený celý Python včetně závislostí, 
+při každém spuštění se to rozbalí do &lt;code&gt;%TEMPDIR%&lt;/code&gt; a po skončení běhu se to zase maže. 
+Ale to jsou pro uživatele nepodstatné detaily. 
+&lt;em&gt;Uživatel dostane jeden .EXE soubor, který prostě spustí.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Návod na použití&lt;/strong&gt; je na webu &lt;a href="https://github.com/pyinstaller/pyinstaller/wiki"&gt;pyinstalleru&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Odzkoušeno na Windows 7, Python 2.7, PyInstaller 2.1.&lt;/p&gt;
+&lt;p&gt;V případě potřeby je možné celý proces postavení automatizovat 
+pomocí Jenkinsu či jiného nástroje.&lt;/p&gt;</summary><category term="python"></category><category term="pyside"></category><category term="windows"></category><category term="pyinstaller"></category></entry><entry><title>Instalace HP Data Protector DA na CentOS</title><link href="http://talking.toaster.cz/2015/hp-data-protector-centos.html" rel="alternate"></link><updated>2015-02-20T00:00:00+01:00</updated><author><name>Věroš Kaplan</name></author><id>tag:talking.toaster.cz,2015-02-20:2015/hp-data-protector-centos.html</id><summary type="html">&lt;p&gt;Kdysi dávno jsem dokázal nainstalovat Disk Agent od HP Omniback na Linux, čímž jsem si 
 v jedné továrně získal nehynoucí obdiv místních IT techniků. Čas od času
 za tento hřích mládí musím zaplatit, protože mi volají lidé, že chtějí 
 CentOS zálohovat pomocí HP Data Protector a chtějí tam nainstalovat jeho Disk Agent.&lt;/p&gt;
